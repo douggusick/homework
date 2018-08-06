@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Measurements/Style</th>
+      <!-- Loops through the uniqueStyles map to place the table headers -->
+      <th *ngFor="let key of getKeys(uniqueStyles)">{{key}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Loops through the uniqueMeasurements map to place the row headers -->
+    <tr *ngFor="let measurement of getKeys(uniqueMeasurements)">
+      <td>
+        {{measurement}}
+      </td>
+      <!-- Gets the count from the unique measurement and style -->
+      <td *ngFor="let style of getKeys(uniqueStyles)">
+        {{inventoryMap.get(style + measurement)}}
+      </td>
+    </tr>
+  </tbody>
+</table>

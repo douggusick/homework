@@ -1,0 +1,14 @@
+<!-- Loops through the product list, displaying the 
+     productName, productDescription, and productImage
+-->
+<div *ngFor="let product of productList">
+  <div class="product">
+    <h2>{{ product.productName }}</h2>
+    <p>{{ product.productDescription }}</p>
+    <img [src]="product.productImage">
+  </div>
+  <!-- Passes the productId to the InventoryComponent -->
+  <div class="inventory">
+    <app-inventory [productId]="product.productId"></app-inventory>
+  </div>
+</div>

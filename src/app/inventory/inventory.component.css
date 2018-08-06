@@ -1,0 +1,14 @@
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+td,
+th {
+  width: 175px;
+}
+
+td {
+  text-align: right;
+}
