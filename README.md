@@ -31,15 +31,15 @@ In order to complete Goal #3, it was necessary to write two GET requests, one to
 The GET request to retrieve the data from the products collection, returns a JSON message containing the product information for each product. I created a Products schema using mongoose that contains the product_id, product_name, product_image, and product_description properties.
 
 Test GET products:
-    - run `curl localhost:3000/api/products`
+- run `curl localhost:3000/api/products`
 
 The GET request to retrieve the data from the inventoy collection uses `find({ product_id: req.params.productId })` to match the given productId to the product_id in the database, returning the inventory information for that product (count for each waist, length, and style combination).
 
 Test GET Inventory:
-    - run `curl localhost:3000/api/inventory/1`
-    - run `curl localhost:3000/api/inventory/2`
-    - run `curl localhost:3000/api/inventory/3`
-    - run `curl localhost:3000/api/inventory/4`
+- run `curl localhost:3000/api/inventory/1`
+- run `curl localhost:3000/api/inventory/2`
+- run `curl localhost:3000/api/inventory/3`
+- run `curl localhost:3000/api/inventory/4`
     
 
 ## Goal #3: make a webpage that displays the data
