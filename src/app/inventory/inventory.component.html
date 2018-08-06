@@ -9,7 +9,7 @@
   <tbody>
     <!-- Loops through the uniqueMeasurements map to place the row headers -->
     <tr *ngFor="let measurement of getKeys(uniqueMeasurements)">
-      <td>
+      <td class="measurement">
         {{measurement}}
       </td>
       <!-- Gets the count from the unique measurement and style -->

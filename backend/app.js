@@ -36,37 +36,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// API call to get the inventory for a given product and style
-//  - Grouped by measurement (waist x length) and style to get 
-//    unique counts for each product
+// API call to get the inventory for a given product
 app.get('/api/inventory/:productId', (req, res, next) => {
-  Inventory.aggregate(
-    [{
-        $match: {
-          product_id: parseInt(req.params.productId)
-        }
-      },
-      {
-        $sort: {
-          waist: -1,
-          length: -1,
-          style: -1
-        }
-      },
-      {
-        $group: {
-          _id: {
-            waist: "$waist",
-            length: "$length",
-            style: "$style"
-          },
-          count: {
-            $sum: "$count"
-          }
-        }
-      }
-    ]
-  ).then(documents => {
+  Inventory.find({
+    product_id: parseInt(req.params.productId)
+  }).then(documents => {
     res.status(200).json({
       message: 'Inventory fetched successfully!',
       inventory: documents

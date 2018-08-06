@@ -6,9 +6,13 @@ td {
 
 td,
 th {
-  width: 175px;
+  width: 125px;
 }
 
 td {
   text-align: right;
+}
+
+td.measurement {
+  text-align: center;
 }

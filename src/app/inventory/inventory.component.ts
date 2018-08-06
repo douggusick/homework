@@ -34,9 +34,9 @@ export class InventoryComponent implements OnInit {
                 return inventoryData.inventory.map(inventory => {
                     return {
                         productId: this.productId,
-                        waist: inventory._id.waist,
-                        length: inventory._id.length,
-                        style: inventory._id.style,
+                        waist: inventory.waist,
+                        length: inventory.length,
+                        style: inventory.style,
                         count: inventory.count
                     }
                 })
